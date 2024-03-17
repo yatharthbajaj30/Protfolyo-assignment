@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import "./Singletestimonial.css"; // Import CSS for testimonial styles
+import './SingleTestimonial.css' // Import CSS for testimonial styles
 
 const Singletestimonial = ({ element }) => {
   return (
