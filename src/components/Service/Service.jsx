@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import SectionHeading from '../SectionHeading/SectionHeading';
-
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 const Service = ({ data }) => {
   return (
     <section id="services" className="section services-section bg-dark">
@@ -25,7 +25,9 @@ const Service = ({ data }) => {
                 >
                   <span className="services-title">{element.name}</span>
                   <span className="services-small-desc">{element.desc}</span>
+                  <span><LocalOfferIcon/>{element.charge}</span>
                   <span className="accordion-icon" />
+
                 </button>
               </div>
               <div

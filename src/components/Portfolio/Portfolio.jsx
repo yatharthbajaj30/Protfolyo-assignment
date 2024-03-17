@@ -3,7 +3,8 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
 import Modal from '../Modal/Modal';
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const Portfolio = ({ data }) => {
   // Modal
@@ -34,7 +35,9 @@ const Portfolio = ({ data }) => {
                   <div className="work-box">
                     <div className="work-img" onClick={() => getData(element.image.url, element.title, element.description, element.techStack)}>
                       <img src={element.image.url} title="" alt="protfolio image" />
+                      
                     </div>
+                    <div style={{margin:'auto'}}><a style={{cursor:'pointer'}} href={element.liveurl}><GitHubIcon/></a><a style={{marginLeft:'20px',cursor:'pointer'}} href={element.githuburl}><LanguageIcon/></a></div>
                     <div className="work-text">
                       <h6>{element.description}</h6>
                       <h4>{element.title}</h4>

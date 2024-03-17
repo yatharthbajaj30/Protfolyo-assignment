@@ -1,23 +1,18 @@
 import PropTypes from 'prop-types';
+import "./Singletestimonial.css"; // Import CSS for testimonial styles
 
 const Singletestimonial = ({ element }) => {
   return (
-    <div className="testimonials-box mb-3">
-      <div className="row gy-4">
-        <div className="col-sm-7 col-lg-8">
-          <div className="t-text">
-            <p>“{element.review}”</p>
-            <div className="t-lead">
-              <h6>- {element.name}</h6>
-              <span>{element.position}</span>
-            </div>
-          </div>
+    <div className="testimonial-card" style={{backgroundColor:'black'}}>
+      <div className="testimonial-content">
+        <p className="testimonial-text">“{element.review}”</p>
+        <div className="testimonial-info">
+          <h6 className="testimonial-name">{element.name}</h6>
+          <span className="testimonial-position"><h6>{element.position}</h6></span>
         </div>
-        <div className="col-sm-5 col-lg-4">
-          <div className="t-avatar">
-            <img src={element.image.url} title="" alt="" />
-          </div>
-        </div>
+      </div>
+      <div className="testimonial-avatar">
+        <img src={element.image.url} className="avatar-img" alt="" />
       </div>
     </div>
   )
@@ -27,4 +22,4 @@ Singletestimonial.propTypes = {
   element: PropTypes.object
 }
 
-export default Singletestimonial
+export default Singletestimonial;

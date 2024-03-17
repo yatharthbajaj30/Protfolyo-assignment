@@ -7,17 +7,21 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import CustomErrorPage from './components/Error';
 
 const App = () => {
   useEffect(() => {
     Aos.init({ once: true });
   }, []);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+        
         </Route>
+        <Route path="/error" element={<CustomErrorPage />} />
       </Routes>
     </BrowserRouter>
   );

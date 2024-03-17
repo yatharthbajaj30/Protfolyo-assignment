@@ -7,12 +7,12 @@ const Experience = ({ data ,fetched}) => {
   const { text, experience, resumeCv } = data;
   function formatDate(dateString) {
     const date = new Date(dateString);
-    const year = date.getFullYear();
-    let month = (1 + date.getMonth()).toString().padStart(2, '0');
-    let day = date.getDate().toString().padStart(2, '0');
-  
-    return `${year}-${month}-${day}`;
+    const options = { month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
   }
+  
+ // Output: January 2024
+  
   return (
     <section className="section experience-section bg-g">
       <div className="container">
@@ -30,7 +30,9 @@ const Experience = ({ data ,fetched}) => {
           </div>
           <div className="col-lg-7 ps-xl-5">
             <ul className="resume-box">
-              {fetched.timeline.map((element, index) => (
+              <h3 style={{textDecoration:'underline'}}>INDUSTRY EXPERIENCE</h3>
+              { fetched.timeline.map((element, index) => (
+                  !element.forEducation&&(
                 <li key={index} data-aos="fade-up" data-aos-duration="800">
                   <div className="r-meta">
                     <span>-{formatDate(element.startDate)} - {formatDate(element.endDate)}</span>
@@ -39,6 +41,20 @@ const Experience = ({ data ,fetched}) => {
                   <h5>{element.jobTitle}</h5>
                   <p>{element.summary}</p>
                 </li>
+                  )
+              ))}
+              <h3 style={{marginTop:'50px',textDecoration:'underline'}}>EDUCATIONAL BOOTCAMPS</h3>
+              { fetched.timeline.map((element, index) => (
+                  element.forEducation&&(
+                <li key={index} data-aos="fade-up" data-aos-duration="800">
+                  <div className="r-meta">
+                    <span>-{formatDate(element.startDate)} - {formatDate(element.endDate)}</span>
+                    <label>-{element.company_name}</label>
+                  </div>
+                  <h5>{element.jobTitle}</h5>
+                  <p>{element.summary}</p>
+                </li>
+                  )
               ))}
             </ul>
           </div>
