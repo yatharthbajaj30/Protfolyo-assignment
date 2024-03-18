@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import { headerData } from '../../data.json';
 import { useState, useEffect } from "react";
 import Preloader from "../Preloader/Preloader";
-// import CustomCursor from "../CustomCursor/CustomCursor";
+import CustomCursor from "../CustomCursor/CustomCursor";
 
 const Layout = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ const Layout = () => {
     <>
       {isLoading ? <Preloader /> : (
         <>
-          {/* <CustomCursor /> */}
+          <CustomCursor />
           <Header data={headerData} />
           <Outlet />
         </>

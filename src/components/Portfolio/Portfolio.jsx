@@ -51,7 +51,7 @@ const Portfolio = ({ data }) => {
         <div className="container">
           <SectionHeading title="RECENT PROJECT" subTitle="My Work" />
           <div className="tech-filters">
-            <span style={{marginRight:'20px',border:'2px solid white'}}><FilterListIcon/></span>
+            <span style={{marginRight:'20px',border:'2px solid white'}}><FilterListIcon style={{height:'50px'}}/></span>
             <span className={`tech-filter ${selectedTech === null ? 'active' : ''}`} onClick={() => handleTechFilter(null)}>All</span>
             {[...uniqueTechStack].map((tech, index) => (
               <span key={index} className={`tech-filter ${tech === selectedTech ? 'active' : ''}`} onClick={() => handleTechFilter(tech)}>{tech}</span>
