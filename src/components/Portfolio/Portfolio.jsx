@@ -10,7 +10,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 
 const Portfolio = ({ data }) => {
   const [modal, setModal] = useState(false);
-  const [tempData, setTempData] = useState([]);
+  const [tempData, setTempData] = useState({});
   const [selectedTech, setSelectedTech] = useState(null);
   const [uniqueTechStack, setUniqueTechStack] = useState(new Set());
 
@@ -27,7 +27,7 @@ const Portfolio = ({ data }) => {
   }, [data.projects]);
 
   const getData = (imgLink, title, subTitle, paragraphList) => {
-    setTempData([imgLink, title, subTitle, paragraphList]);
+    setTempData({ imgLink, title, subTitle, paragraphList }); // Update tempData object
     setModal(true);
   }
 
@@ -88,7 +88,7 @@ const Portfolio = ({ data }) => {
           </div>
         </div>
       </div>
-      {modal === true ? <Modal img={tempData[1]} title={tempData[2]} subTitle={tempData[3]} paraList={tempData[4]} modalClose={modalClose} /> : ""}
+      {modal === true ? <Modal img={tempData.imgLink} title={tempData.title} subTitle={tempData.subTitle} paraList={tempData.paragraphList} modalClose={modalClose} /> : ""}
     </section>
   )
 }
