@@ -20,7 +20,7 @@ const Experience = ({ data ,fetched}) => {
           <div className="col-lg-5">
             <div className="section-heading">
               <SectionHeading title="My Experience" subTitle="Experience" />
-              <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">{text}</p>
+              <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" style={{margin:'auto'}}>{text}</p>
               <div className="btn-bar" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <a href={resumeCv} className="px-btn dark" download>
                   Download my resume <Icon icon="bi-download" />
