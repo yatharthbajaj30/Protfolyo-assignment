@@ -1,117 +1,116 @@
 /* Portfolio.css */
 
 .section {
-    padding: 60px 0;
-  }
-  
-  
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .section-heading {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  
-  .section-heading h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .section-heading p {
-    font-size: 18px;
-    color: #777;
-  }
-  
-  .tech-filters {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .tech-filter {
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: #ddd;
-    color: #333;
-    transition: all 0.3s ease;
-  }
-  
-  .tech-filter.active {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .lightbox-gallery {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .work-box {
-    
-    border-radius: 10px;
-    overflow: hidden;
-   
-    transition: all 0.3s ease;
-  }
-  
-  .work-box:hover {
-    transform: translateY(-10px);
-  }
-  
-  .work-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .work-text {
-    padding: 20px;
-   /* Set the background color here */
-    color: white; /* Set the text color */
-  }
-  
-  .work-text h6 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .work-text h4 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  
-  .tech-stack {
-    margin-bottom: 15px;
-  }
-  
-  .tech-tag {
-    display: inline-block;
-    background-color: white;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-  
-  .btn-bar {
-    margin-top: 20px;
-  }
-  
-  .gallery-link {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .gallery-link:hover {
-    
-  }
-  
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section-heading p {
+  font-size: 18px;
+  color: #777;
+}
+
+.tech-filters {
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex; /* Use flexbox for better responsiveness */
+  flex-wrap: wrap; /* Wrap the tags when there's not enough space */
+  justify-content: center; /* Center the tags horizontally */
+}
+
+.tech-filter {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px; /* Add margin bottom for spacing between tags */
+  background-color: #ddd;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.tech-filter.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.lightbox-gallery {
+  list-style: none;
+  padding: 0;
+}
+
+.work-box {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.work-box:hover {
+  transform: translateY(-10px);
+}
+
+.work-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+.work-text {
+  padding: 20px;
+  /* Set the background color here */
+  color: white; /* Set the text color */
+}
+
+.work-text h6 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.work-text h4 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.tech-stack {
+  margin-bottom: 15px;
+}
+
+.tech-tag {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.btn-bar {
+  margin-top: 20px;
+}
+
+.gallery-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.gallery-link:hover {
+  /* Add hover effect if needed */
+}

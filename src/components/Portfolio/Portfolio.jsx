@@ -7,6 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
 import '../Portfolio.css';
 import FilterListIcon from '@mui/icons-material/FilterList';
+
 const Portfolio = ({ data }) => {
   const [modal, setModal] = useState(false);
   const [tempData, setTempData] = useState([]);
@@ -24,7 +25,6 @@ const Portfolio = ({ data }) => {
     });
     setUniqueTechStack(techSet);
   }, [data.projects]);
-  
 
   const getData = (imgLink, title, subTitle, paragraphList) => {
     setTempData([imgLink, title, subTitle, paragraphList]);
@@ -40,11 +40,10 @@ const Portfolio = ({ data }) => {
   }
 
   const filteredProjects = selectedTech
-  ? data.projects.filter(project =>
-      project.techStack.some(tech => tech.trim() === selectedTech.trim())
-    )
-  : data.projects;
-
+    ? data.projects.filter(project =>
+        project.techStack.some(tech => tech.trim() === selectedTech.trim())
+      )
+    : data.projects;
 
   return (
     <section>
