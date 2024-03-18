@@ -10,21 +10,26 @@ import Testimonial from "../components/Testimonial/Testimonial";
 import data from "../data.json";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Preloader from '../components/Preloader/Preloader';
 
 const Home = () => {
   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        console.log("loading...............")
         const response = await fetch('https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae');
+        console.log("done..................")
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
         const userData = await response.json();
         setUserData(userData);
+        setLoading(false); // Set loading to false when data is fetched
       } catch (error) {
         console.error('Error fetching user data:', error);
         setError(error)
@@ -34,8 +39,13 @@ const Home = () => {
     fetchUserData();
   }, []);
 
+  if (loading) {
+    return <Preloader />; // Show preloader while loading
+  }
+
   if (error) {
-    return navigate('/error');
+    navigate('/error'); // Redirect to /error page
+    return null; // Render nothing while redirecting
   }
 
   if (!userData) {
